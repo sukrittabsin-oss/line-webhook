@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-const LINE_CHANNEL_ACCESS_TOKEN = "ใส่ Channel Access Token ตรงนี้";
+const LINE_CHANNEL_ACCESS_TOKEN = process.env.LINE_CHANNEL_ACCESS_TOKEN;
 
 app.post('/webhook', async (req, res) => {
   const events = req.body.events;
